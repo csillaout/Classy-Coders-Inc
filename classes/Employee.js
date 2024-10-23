@@ -3,11 +3,28 @@ class Employee {
   #salary;
   #isHired;
 
+  // Static fields
+  static allEmployees = [];
+
+  // Static methods
+  static getEmployees() {
+    return Employee.allEmployees;
+  }
+
+  static getTotalPayroll() {
+    let total = 0;
+    for(let worker of Employee.allEmployees) {
+      total += worker.getSalary();
+    }
+    return total;
+  }
+
   constructor(name, position, salary) {
     this.name = name; // Public field
     this.position = position; // Public field
     this.#salary = salary; // Private field
     this.#isHired = true; // Private field, default is true
+    Employee.allEmployees.push(this);
   }
 
   // Method to get the salary of the employee
