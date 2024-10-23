@@ -9,7 +9,7 @@ class SalesPerson extends Employee {
     this.clients = clients;
     this.#totalSales = 0;
   }
-  getSalesNumbers() {
+  getSalesNumber() {
     return this.#totalSales;
   }
   makeSale(amount) {
