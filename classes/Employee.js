@@ -35,13 +35,13 @@ class Employee {
   }
 }
 
-// Example usage
-const preston = new Employee("Preston", "Engineer", 100000);
-console.log(preston.getSalary()); // 100000
-preston.setSalary(105000);
-console.log(preston.getSalary()); // 105000
-console.log(preston.getStatus()); // true
-preston.setStatus("fire");
-console.log(preston.getStatus()); // false
+// // Example usage
+// const preston = new Employee("Preston", "Engineer", 100000);
+// console.log(preston.getSalary()); // 100000
+// preston.setSalary(105000);
+// console.log(preston.getSalary()); // 105000
+// console.log(preston.getStatus()); // true
+// preston.setStatus("fire");
+// console.log(preston.getStatus()); // false
 
-module.exports = Employee;
+module.exports = { Employee };
