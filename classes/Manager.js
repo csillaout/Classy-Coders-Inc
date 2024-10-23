@@ -1,4 +1,4 @@
-const Employee = require("./Employee.js");
+const { Employee } = require("./Employee.js");
 
 class Manager extends Employee {
   #employeesManaged;
@@ -7,10 +7,12 @@ class Manager extends Employee {
     this.department = department;
     this.#employeesManaged = [];
   }
+  
   getEmployeesManaged() {
     return this.#employeesManaged;
   }
-  addEmployeeManaged(employee) {
+  
+  setEmployeesManaged(employee) {
     if (employee instanceof Employee) {
       this.#employeesManaged.push(employee);
     } else {
@@ -19,20 +21,21 @@ class Manager extends Employee {
       );
     }
   }
+
 }
 
 module.exports = {
   Manager,
 };
 
-const jenna = new Manager(
-  "Jenna",
-  "Head of Engineers",
-  120000,
-  "Software Engineering"
-);
-console.log(jenna.getEmployeesManaged()); // []
+// const jenna = new Manager(
+//   "Jenna",
+//   "Head of Engineers",
+//   120000,
+//   "Software Engineering"
+// );
+// console.log(jenna.getEmployeesManaged()); // []
 
-const preston = new Employee("Preston", "Engineer", 100000);
-jenna.addEmployeeManaged(preston);
-console.log(jenna.getEmployeesManaged()); // [ Employee { name: 'Preston', position: 'Engineer' } ]
+// const preston = new Employee("Preston", "Engineer", 100000);
+// jenna.addEmployeeManaged(preston);
+// console.log(jenna.getEmployeesManaged()); // [ Employee { name: 'Preston', position: 'Engineer' } ]
